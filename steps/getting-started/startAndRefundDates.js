@@ -5,12 +5,15 @@ import { productInfo } from "../../utilities/qa-data-reader.js";
 
 
 Given('user is on the enrollment page', async function () {
+    startApplicationPage.login();
 });
 
 Then('the program start date is displayed', async function () {
+    await expect(startApplicationPage.programStartDate).toBeVisible();
 });
 
 Then('the program refund date is displayed', async function () {
+    await expect(startApplicationPage.refundEndDate).toBeVisible();
 });
 
 Then('the displayed start date for the program is correct', async function () {
